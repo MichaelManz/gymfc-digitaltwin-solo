@@ -350,6 +350,20 @@
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
+    <plugin name='config' filename='libAircraftConfigPlugin.so'>
+      <motorCount>4</motorCount>
+      <centerOfThrust>
+        <link>base_link</link>
+        <offset>0 0 0.051</offset>
+      </centerOfThrust>
+      <sensors>
+        <sensor type='imu'>
+          <enable_angular_velocity>true</enable_angular_velocity>
+          <enable_linear_acceleration>true</enable_linear_acceleration>
+          <enable_orientation>true</enable_orientation>
+        </sensor>
+      </sensors>
+    </plugin>
     <plugin name='front_right_motor_model' filename='libgazebo_motor_model.so'>
       <robotNamespace></robotNamespace>
       <jointName>rotor_0_joint</jointName>
